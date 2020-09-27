@@ -1,0 +1,11 @@
+- name: "[Ubuntu|Debian] install unzip"
+  apt:
+    name: unzip
+    state: present
+  when: ansible_distribution == "Ubuntu" or ansible_distribution == "Debian"
+
+- name: "[CentOS|RHEL|Amazon] install unzip"
+  yum:
+    name: unzip
+    state: present
+  when: ansible_distribution == "CentOS" or ansible_distribution == "Red Hat Enterprise Linux" or ansible_distribution == "Amazon"

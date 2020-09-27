@@ -1,0 +1,15 @@
+##
+# {{ ansible_managed }}
+#
+{% if item.profiles is defined %}
+{% for profile in item.profiles %}
+[{% if profile.name is defined and profile.name != "default" %}profile {% endif %}{{ profile.name | default('default') }}]
+{% if profile.role_arn is defined and profile.source_profile is defined %}
+role_arn = "{{ profile.role_arn }}"
+source_profile = "{{ profile.source_profile }}"
+{% else %}
+output = "{{ profile.output | default('json') }}"
+region = "{{ profile.region | default('ap-southeast-1') }}"
+{% endif %}
+{% endfor %}
+{% endif %}

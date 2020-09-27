@@ -1,0 +1,24 @@
+---
+# file: tasks/install.yml
+#
+# installation tasks.
+#
+
+- include: unzip.yml
+
+- name: download awscli bundle installer
+  get_url:
+    url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
+    dest: /usr/local/src/awscliv2.zip
+
+- name: unzip awscli bundle installer
+  unarchive:
+    src: /usr/local/src/awscliv2.zip
+    dest: /usr/local/src
+    creates: /usr/local/src/aws
+    copy: no
+
+- name: install awscli
+  command: "/usr/local/src/aws/install -i {{ awscli_install_dir }} -b {{ awscli_bin_dir }}"
+  args:
+    creates: "{{ awscli_install_dir }}"

@@ -1,0 +1,22 @@
+aws_output: json
+aws_region: "ap-southeast-1"
+
+awscli_install_dir: /usr/local/aws-cli
+awscli_bin_dir: /usr/local/bin
+
+awscli_no_log: true
+awscli_users: []
+#
+# awscli_users:
+#   # Add the user 'johnd'
+#   - name: johnd
+#     state: present
+#     profiles:
+#       - name: default
+#         aws_access_key_id: XXXXXXXXXXXXXXXXXXXX
+#         aws_secret_access_key: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+#         output: json
+#         region: ap-northeast-1
+#   # Remove the user 'johnd'
+#   - name: johnd
+#     state: absent
