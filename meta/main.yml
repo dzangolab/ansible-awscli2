@@ -1,6 +1,6 @@
 ---
 galaxy_info:
-  role_name: dzangolab.awscli2
+  role_name: awscli2
   author: Olivier Pichon <op@dzangolab.com>
   description: Install and configure AWS CLI v2
   company: Dzango Technologies Limited
