@@ -16,7 +16,7 @@ AWS CLI profiles can be given as follows:
 ```yml
 awscli_users:
   # Add the user 'johnd'
-  - name: johnd
+  - user: johnd
     state: present
     profiles:
       - name: default
@@ -25,9 +25,8 @@ awscli_users:
         output: json
         region: ap-northeast-1
   # Remove the user 'johnd'
-  - name: johnd
+  - user: johnd
     state: absent
-      - profile_1
 ```
 
 Example Playbook
@@ -44,7 +43,7 @@ Example Playbook
   vars:
     awscli_users:
       # Add the user 'johnd'
-      - name: johnd
+      - user: johnd
         state: present
         profiles:
           - name: default
@@ -53,9 +52,8 @@ Example Playbook
             output: json
             region: ap-northeast-1
       # Remove the user 'johnd'
-      - name: johnd
+      - user: johnd
         state: absent
-          - profile_1
 ```
 
 License

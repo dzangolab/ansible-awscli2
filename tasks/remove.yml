@@ -1,0 +1,7 @@
+- name: Remove awscli
+  file:
+    path: ~/.aws
+    state: absent
+  with_items:
+    - "{{ awscli_users }}"
+  when: item.state is defined and item.state == "absent"
