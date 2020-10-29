@@ -6,6 +6,8 @@
 
 - include: unzip.yml
 
+- include: pip3.yml
+
 - name: download awscli bundle installer
   get_url:
     url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip

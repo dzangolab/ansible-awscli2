@@ -1,0 +1,11 @@
+- name: "[Ubuntu|Debian] install pip3"
+  apt:
+    name: python3-pip
+    state: present
+  when: ansible_distribution == "Ubuntu" or ansible_distribution == "Debian"
+
+- name: "[CentOS|RHEL|Amazon] install pip3"
+  yum:
+    name: python3-pip
+    state: present
+  when: ansible_distribution == "CentOS" or ansible_distribution == "Red Hat Enterprise Linux" or ansible_distribution == "Amazon"
