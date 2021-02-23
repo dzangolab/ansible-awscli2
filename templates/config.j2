@@ -4,9 +4,9 @@
 {% if item.profiles is defined %}
 {% for profile in item.profiles %}
 [{% if profile.name is defined and profile.name != "default" %}profile {% endif %}{{ profile.name | default('default') }}]
-{% if profile.role_arn is defined and profile.source_profile is defined %}
+{% if profile.role_arn is defined %}
 role_arn = {{ profile.role_arn }}
-{% if profile.source_profile %}
+{% if profile.source_profile is defined %}
 source_profile = {{ profile.source_profile }}
 {% else %}
 credential_source = Ec2InstanceMetadata
