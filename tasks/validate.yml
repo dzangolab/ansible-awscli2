@@ -6,8 +6,8 @@
 
 - name: Check distribution
   fail:
-    msg="Only Ubuntu and debian are supported"
-  when: ansible_distribution != 'Ubuntu' or ansible_distribution != 'Debian'
+    msg="Only Ubuntu and Debian are supported"
+  when: ansible_distribution != 'Ubuntu' and ansible_distribution != 'Debian'
 
 - name: Check Ubuntu version
   fail:
