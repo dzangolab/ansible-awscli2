@@ -4,7 +4,8 @@
 # debug tasks.
 #
 
-- debug:
+- name: debug
+  debug:
     var="{{ item }}"
   when: item is defined
   with_items:

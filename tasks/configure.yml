@@ -12,7 +12,7 @@
     group="{{ item.user }}"
     mode=0700
   with_items: "{{ awscli_users }}"
-  become: yes
+  become: true
 
 - name: configuration | setup credentials
   template:
@@ -22,7 +22,7 @@
     group="{{ item.user }}"
     mode=0400
   with_items: "{{ awscli_users }}"
-  become: yes
+  become: true
 
 - name: configuration | setup configuration
   template:
@@ -32,4 +32,4 @@
     group="{{ item.user }}"
     mode=0400
   with_items: "{{ awscli_users }}"
-  become: yes
+  become: true

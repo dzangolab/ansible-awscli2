@@ -6,15 +6,17 @@ galaxy_info:
   company: Dzango Technologies Limited
   min_ansible_version: 2.0
   platforms:
-  - name: Ubuntu
-    versions:
-    - 18.04
-    - 20.04
-  - name: Debian
-    versions:
-    - all
+    - name: Ubuntu
+      versions:
+        - 18.04
+        - 20.04
+    - name: Debian
+      versions:
+        - all
   galaxy_tags:
     - aws
     - awscli
 
-dependencies: []
+  dependencies: []
+
+  license: MIT

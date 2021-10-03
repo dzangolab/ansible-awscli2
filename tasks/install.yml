@@ -18,7 +18,7 @@
     src: /usr/local/src/awscliv2.zip
     dest: /usr/local/src
     creates: /usr/local/src/aws
-    copy: no
+    copy: false
 
 - name: install awscli
   command: "/usr/local/src/aws/install -i {{ awscli_install_dir }} -b {{ awscli_bin_dir }}"
